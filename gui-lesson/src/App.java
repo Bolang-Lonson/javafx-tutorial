@@ -11,7 +11,7 @@ import javafx.scene.text.Font;
 
 public class App extends Application {
     public void start(Stage stage) {
-        Label message = new Label("First FX Application!");
+        Label message = new Label("Saadiq's First FX Application!");
         message.setFont( new Font(40) );
         Button helloButton = new Button("Say Hello");
         helloButton.setOnAction( evt -> message.setText("Hello World!") );
@@ -24,7 +24,7 @@ public class App extends Application {
         BorderPane root = new BorderPane();
         root.setCenter(message);
         root.setBottom(buttonBar);
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(root, 960, 600);
         stage.setScene(scene);
         stage.setTitle("JavaFX Test");
         stage.show();
