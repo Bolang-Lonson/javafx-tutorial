@@ -12,9 +12,9 @@ import javafx.scene.text.Font;
 public class App extends Application {
     public void start(Stage stage) {
         Label message = new Label("Saadiq's First FX Application!");
-        message.setFont( new Font(40) );
+        message.setFont( new Font(40) );    // sets the font size of the string to be displayed by the label
         Button helloButton = new Button("Say Hello");
-        helloButton.setOnAction( evt -> message.setText("Hello World!") );
+        helloButton.setOnAction( evt -> message.setText("Hello World!") );  // Click listener for the helloButton
         Button goodbyeButton = new Button("Say Goodbye");
         goodbyeButton.setOnAction( evt -> message.setText("Goodbye!!") );
         Button quitButton = new Button("Quit");
