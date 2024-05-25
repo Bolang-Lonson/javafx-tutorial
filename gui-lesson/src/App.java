@@ -24,7 +24,7 @@ public class App extends Application {
         BorderPane root = new BorderPane();
         root.setCenter(message);
         root.setBottom(buttonBar);
-        Scene scene = new Scene(root, 450, 200);
+        Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("JavaFX Test");
         stage.show();
