@@ -1,5 +1,7 @@
 # Compiled class files
-gui-lesson/bin/*.class
+**/gui-lesson/bin/*.class
+**/bin/*.class
+**/bin/App.class
 
 # Log files
 **/*.log
@@ -72,4 +74,3 @@ gui-lesson/bin/*.class
 **/bin/
 **/tmp/
 **/logs/
-gui-lesson/bin/App.class
