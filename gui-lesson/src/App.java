@@ -1,4 +1,5 @@
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
@@ -10,6 +11,9 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class App extends Application {
 
@@ -51,6 +55,26 @@ public class App extends Application {
         stage2.setTitle("Show Circle");
         stage2.setScene(scene2);
         stage2.show();
+
+        Stage stage3 = new Stage();
+        Pane pane2 = new HBox(10);
+        pane2.setPadding(new Insets(5, 5, 5, 5));
+        Image img = new Image("./pic.jpeg");
+        pane2.getChildren().add(new ImageView(img));
+
+        ImageView imageView2 = new ImageView(img);
+        imageView2.setFitHeight(100);
+        imageView2.setFitWidth(100);
+        pane2.getChildren().add(imageView2);
+
+        ImageView imageView3 = new ImageView(img);
+        imageView3.setRotate(90);
+        pane2.getChildren().add(imageView3);
+
+        Scene scene3 = new Scene(pane2);
+        stage3.setTitle("Show Image");
+        stage3.setScene(scene3);
+        stage3.show();
     }
     public static void main(String[] args) throws Exception {
         launch(args); // Run this Application.
