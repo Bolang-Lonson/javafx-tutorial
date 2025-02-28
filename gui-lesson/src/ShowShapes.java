@@ -1,6 +1,6 @@
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
+// import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.geometry.Insets;
@@ -11,6 +11,9 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.FontPosture;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Ellipse;
+import javafx.scene.shape.Arc;
+import javafx.scene.shape.ArcType;
 
 public class ShowShapes extends Application{
     @Override
@@ -69,6 +72,54 @@ public class ShowShapes extends Application{
         stage3.setScene(new Scene(pane2, 250, 150));
         stage3.setTitle("Show Rectangles");
         stage3.show();
+
+        Pane pane3 = new Pane();
+        for (int i = 0; i < 50; i++) {
+            Ellipse el1 = new Ellipse(150, 100, 100, 50);
+            el1.setStroke(Color.color(Math.random(), Math.random(), Math.random()));
+            el1.setFill(Color.TRANSPARENT);
+            el1.setRotate(i * 180 / 50);
+            pane3.getChildren().add(el1);
+        }
+
+        Stage stage4 = new Stage();
+        stage4.setScene(new Scene(pane3, 300, 210));
+        stage4.setTitle("Show Ellipse");
+        stage4.show();
+
+        Pane pane4 = new Pane();
+
+        Arc arc1 = new Arc(150, 100, 80, 80, 30, 35);
+        arc1.setFill(Color.RED);
+        arc1.setType(ArcType.ROUND);
+        pane4.getChildren().add(new Text(210, 40, "arc1: round"));
+        pane4.getChildren().add(arc1);
+
+        Arc arc2 = new Arc(150, 100, 80, 80, 30+90, 35);
+        arc2.setFill(Color.WHITE);
+        arc2.setType(ArcType.OPEN);
+        arc2.setStroke(Color.BLACK);
+        pane4.getChildren().add(new Text(20, 40, "arc2: open"));
+        pane4.getChildren().add(arc2);
+
+        Arc arc3 = new Arc(150, 100, 80, 80, 30+180, 35);
+        arc3.setFill(Color.WHITE);
+        arc3.setType(ArcType.CHORD);
+        arc3.setStroke(Color.BLACK);
+        pane4.getChildren().add(new Text(20, 170, "arc3: chord"));
+        pane4.getChildren().add(arc3);
+
+        Arc arc4 = new Arc(150, 100, 80, 80, 30+270, 35);
+        arc4.setFill(Color.GREEN);
+        arc4.setType(ArcType.CHORD);
+        arc4.setStroke(Color.BLACK);
+        pane4.getChildren().add(new Text(210, 170, "arc4: chord"));
+        pane4.getChildren().add(arc4);
+
+        Stage stage5 = new Stage();
+        stage5.setScene(new Scene(pane4, 300, 200));
+        stage5.setTitle("Show Arc");
+        stage5.show();
     }
 
     public static void main(String[] args) {
@@ -77,6 +128,7 @@ public class ShowShapes extends Application{
 }
 
 class LinePane extends Pane {
+
     public LinePane() {
         Line line1 = new Line(10, 10, 10, 10);
         line1.endXProperty().bind(widthProperty().subtract(10));
